@@ -1,9 +1,12 @@
 void setup() {
-  // put your setup code here, to run once:
-
+  DDRB |= (1 << 5);
+  DDRD &= ~(1 << 2);
+  PORTD &= ~(1 << 2);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
-}
+  if (PIND & (1 << PIND2)) {
+    PORTB |= (1 << PORTB5);
+  } else {
+    PORTB &= ~(1 << PORTB5);
+  }}
